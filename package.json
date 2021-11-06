@@ -5,10 +5,15 @@
   "repository": "https://github.com/mindsgn/perma-web-backend",
   "author": "mindsgn <seni.tembe@protonmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
-    "express-session": "^1.17.2"
+    "express-session": "^1.17.2",
+    "heroku-cli": "^7.0.9"
   }
 }
