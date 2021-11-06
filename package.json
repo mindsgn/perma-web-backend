@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "cd frontend && npm run build && cd .. && node index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
