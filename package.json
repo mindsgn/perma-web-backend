@@ -1,19 +1,26 @@
 {
-  "name": "perma-web-backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/mindsgn/perma-web-backend",
-  "author": "mindsgn <seni.tembe@protonmail.com>",
-  "license": "MIT",
+  "name": "perma",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd frontend && npm install && npm run build && cd .. && node index.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.4",
-    "express-session": "^1.17.2",
-    "heroku-cli": "^7.0.9"
+    "@chakra-ui/react": "^1.7.1",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^4",
+    "next": "12.0.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.7",
+    "@types/react": "17.0.34",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.3",
+    "typescript": "4.4.4"
   }
 }
