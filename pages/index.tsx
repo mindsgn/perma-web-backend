@@ -77,7 +77,7 @@ const Home: NextPage = () => {
                     <Text>{data.network}</Text>
                   </Box>
                 </Box>
-                <Box m="20px" m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
+                <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
                   <Box>
                     <Text>Node State Latency</Text>
                   </Box>
