@@ -19,6 +19,17 @@ interface Data{
 const Home: NextPage = () => {
   const [data, setData] = useState(null);
   const [ready, setReady] =useState(false);
+  
+  const [blocks, setBlock] = useState(0);
+  const [current, setCurrent] = useState("");
+  const [height, setHeight] = useState(0);
+  const [network, setNetwork] = useState("");
+  const [nodeStateLatency, setNodeStateLatency] = useState("");
+  const [peers, setPeers] = useState(0);
+  const [queueLength, setQueueLength] = useState(0);
+  const [release, setRelease] = useState("");
+  const [version, setVersion] = useState("");
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,11 +38,23 @@ const Home: NextPage = () => {
         setData(result.data);
         console.log(result.data);
         setReady(true);
+
+        setBlock(result.data.blocks);
+        setCurrent(result.data.current);
+        setHeight(result.data.height);
+        setNetwork(result.data.network);
+        setNodeStateLatency(result.data.network);
+        setPeers(result.data.peers);
+        setRelease(result.data.release);
+        setVersion(result.data.setVersion);
+
       }catch(error){
         console.log(error);
       }
     };
     fetchData();
+
+
   }, [ready]); 
 
   return (
@@ -50,7 +73,7 @@ const Home: NextPage = () => {
                     <Text>Blocks</Text>
                   </Box>
                   <Box>
-                    <Text>{data.blocks}</Text>
+                    <Text>{blocks}</Text>
                   </Box>
                 </Box>
                 <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
@@ -58,7 +81,7 @@ const Home: NextPage = () => {
                     <Text>Current</Text>
                   </Box>
                   <Box>
-                    <Text>{data.current}</Text>
+                    <Text>{current}</Text>
                   </Box>
                 </Box>
                 <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
@@ -66,7 +89,7 @@ const Home: NextPage = () => {
                     <Text>Height</Text>
                   </Box>
                   <Box>
-                    <Text>{data.height}</Text>
+                    <Text>{height}</Text>
                   </Box>
                 </Box>
                 <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
@@ -74,7 +97,7 @@ const Home: NextPage = () => {
                     <Text>Network</Text>
                   </Box>
                   <Box>
-                    <Text>{data.network}</Text>
+                    <Text>{network}</Text>
                   </Box>
                 </Box>
                 <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
@@ -82,7 +105,7 @@ const Home: NextPage = () => {
                     <Text>Node State Latency</Text>
                   </Box>
                   <Box>
-                    <Text></Text>
+                    <Text>{nodeStateLatency}</Text>
                   </Box>
                 </Box>
                 <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
@@ -90,15 +113,15 @@ const Home: NextPage = () => {
                     <Text>Peers</Text>
                   </Box>
                   <Box>
-                    <Text>{data.peers}</Text>
+                    <Text>{peers}</Text>
                   </Box>
                 </Box>
-                <Box m="20px" m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
+                <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
                   <Box>
                     <Text>Queue Length</Text>
                   </Box>
                   <Box>
-                    <Text>{data.node_state_latency}</Text>
+                    <Text>{queueLength}</Text>
                   </Box>
                 </Box>
                 <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
@@ -106,7 +129,7 @@ const Home: NextPage = () => {
                     <Text>Release</Text>
                   </Box>
                   <Box>
-                    <Text>{data.release}</Text>
+                    <Text>{release}</Text>
                   </Box>
                 </Box>
                 <Box m="20px" p="6" color="white" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden"  >
@@ -114,7 +137,7 @@ const Home: NextPage = () => {
                     <Text>Version</Text>
                   </Box>
                   <Box>
-                    <Text>{data.version}</Text>
+                    <Text>{version}</Text>
                   </Box>
                 </Box>
             </Flex>
