@@ -3,7 +3,7 @@ import { Box, Heading } from "@chakra-ui/react";
 
 const Navigation = () => {
   return (
-    <Box>
+    <Box p="20px" color="white">
         <Heading>Arweave</Heading>
     </Box>
   )
